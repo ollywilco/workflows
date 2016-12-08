@@ -8,5 +8,8 @@
     "url": "?.git"
   },
   "author": "Olly Wilco",
-  "license": "ISC"
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7"
+  }
 }
