@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 		browserify = require('gulp-browserify'),
 		compass = require('gulp-compass'),
 		concat = require('gulp-concat');
-		
+
 var coffeeSources = ['components/coffee/tagline.coffee'];
 var jsSources = [
 	'components/scripts/rclick.js',
@@ -38,6 +38,8 @@ gulp.task('compass', function(){
 			.on('error', gutil.log)
 		.pipe(gulp.dest('builds/development/css'))
 });
+
+gulp.task('default', ['coffee', 'js', 'compass']);
 
 
 
