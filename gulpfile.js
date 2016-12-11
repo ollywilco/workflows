@@ -14,22 +14,19 @@ var env,
 		outputDir,
 		sassStyle;
 
-sassSources = ['components/sass/style.scss'];
-htmlSources = [outputDir + '*.html'];
-jsonSources = [outputDir + 'js/*.json'];
-
 env = process.env.NODE_ENV || 'development';
 
 if (env==='development'){
 	outputDir = 'builds/development/';
-	sassStyle = 'expanded';
+	sassStyle = 'compressed';
 } else {
 	outputDir = 'builds/production/';
-	sassStyle = 'compressed';
+	sassStyle = 'expanded';
 }
 
-
-
+sassSources = ['components/sass/style.scss'];
+htmlSources = [outputDir + '*.html'];
+jsonSources = [outputDir + 'js/*.json'];
 coffeeSources = ['components/coffee/tagline.coffee'];
 jsSources = [
 	'components/scripts/rclick.js',
