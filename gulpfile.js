@@ -57,7 +57,7 @@ gulp.task('compass', function(){
 	gulp.src(sassSources)
 		.pipe(compass({
 			config_file: './config.rb',
-			sass: 'components/sass',
+			sass: 'components/sass/',
 			css: outputDir + 'css',
 			image: outputDir + 'images',
 			style: sassStyle
