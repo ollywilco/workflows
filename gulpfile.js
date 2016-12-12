@@ -11,6 +11,7 @@ var env,
 		jsSources,
 		sassSources,
 		htmlSources,
+		jsonSources,
 		outputDir,
 		sassStyle;
 
@@ -18,16 +19,16 @@ env = process.env.NODE_ENV || 'development';
 
 if (env==='development'){
 	outputDir = 'builds/development/';
-	sassStyle = 'compressed';
+	sassStyle = 'expanded';
 } else {
 	outputDir = 'builds/production/';
 	sassStyle = 'expanded';
 }
 
+coffeeSources = ['components/coffee/tagline.coffee'];
 sassSources = ['components/sass/style.scss'];
 htmlSources = [outputDir + '*.html'];
 jsonSources = [outputDir + 'js/*.json'];
-coffeeSources = ['components/coffee/tagline.coffee'];
 jsSources = [
 	'components/scripts/rclick.js',
 	'components/scripts/pixgrid.js',
@@ -53,9 +54,9 @@ gulp.task('js', function(){
 gulp.task('compass', function(){
 	gulp.src(sassSources)
 		.pipe(compass({
-			config_file: './config.rb',
+			// config_file: './config.rb',
 			sass: 'components/sass/',
-			css: outputDir + 'css',
+			// css: outputDir + 'css',
 			image: outputDir + 'images',
 			style: sassStyle
 		})
